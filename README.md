@@ -22,3 +22,24 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# comicrage DB設計
+## usersテーブル
+|Column|Type|Options|
+|nikename|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+
+### Association
+- has_many :books
+
+## booksテーブル
+|Column|Type|Options|
+|title|text||
+|comment|text||
+|image|text||
+|user-id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user

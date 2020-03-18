@@ -1,0 +1,34 @@
+
+.wrapper
+  .header
+    .top-box
+      .top-box__title
+        = link_to "#" do
+          comicrage
+      %form.top-box__form
+        %input{type: "text", class: "top-box__form__input", placeholder: "タイトルを入力してください"}
+    .bottom-box
+      .bottom-box__category
+        .bottom-box__category__mark
+          = icon('fas', 'list', class: 'icon')
+          カテゴリ
+      .bottom-box__icon
+        .bottom-box__icon__btn
+          = link_to "#" do
+            = icon('far', 'user-circle', class: 'icon')
+        .bottom-box__icon__user
+          test
+  .contents
+    .contents-name
+      %h1.contents-name__box
+        コミック一覧
+    .lists
+      .lists__box
+        .lists__box__title
+          test
+      .lists__box
+        .lists__box__title
+          test
+      .lists__box
+        .lists__box__title
+          test

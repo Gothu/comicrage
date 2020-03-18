@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  .header {
+    height: 100px;
+    width: 100%;
+    box-shadow: 2px 2px 4px gray;
+    padding: 0 150px;
+    .top-box {
+      height: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      &__title {
+        width: 250px;
+        font-size: 60px;
+        font-family: fantasy;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(71, 80, 56);
+      }
+      &__form {
+        height: 60px;
+        &__input {
+          height: 35px;
+          width: 800px;
+          padding: 0 10px;
+          margin-top: 15px;
+          border-radius: 10px;
+          outline: none;
+        }
+      }
+    }
+    .bottom-box {
+      height: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      &__category {
+        display: flex;
+        height: 40px;
+        width: 600px;
+        padding-top: 12px;
+        font-weight: bold;
+        color: rgb(41, 41, 41);
+        &__mark {
+          position: relative;
+          .icon {
+            color: hotpink;
+            margin-right: 10px;
+          }
+        }
+      }
+      &__icon {
+        height: 40px;
+        width: 150px;
+        display: flex;
+        &__btn {
+          height: 40px;
+          width: 50px;
+          font-size: 30px;
+          margin-right: 5px;
+          .icon {
+            color: hotpink;
+          }
+        }
+        &__user {
+          height: 40px;
+          width: 200px;
+          font-size: 25px;
+          font-weight: bold;
+          color: rgb(66, 65, 65);
+          padding-top: 3px;
+        }
+      }
+    }
+  }
+
+
+
+  .contents {
+    width: 100%;
+    padding-top: 40px;
+  }
+    .contents-name {
+      height: 150px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      &__box {
+        height: 100px;
+        width: 700px;
+        margin: 0 auto;
+        line-height: 100px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+      }
+    }
+    .lists {
+      background-color: #ebebeb;
+      height: 100vh;
+      width: 1200px;
+      margin: 0 auto;
+      padding: 40px 30px;
+      &__box {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #333333;
+        &__title {
+          width: 100%;
+          text-align: center;
+          font-size: 30px;
+          color: rgb(3, 162, 224);
+        }
+      }
+    }
+}

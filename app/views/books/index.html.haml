@@ -23,12 +23,12 @@
       .contents-name__box
         コミック一覧
     .lists
-      .lists__box
-        .lists__box__title
-          test
-      .lists__box
-        .lists__box__title
-          test
-      .lists__box
-        .lists__box__title
-          test
+      - @books.each do |book|
+        .lists__box
+          .lists__box__title
+            = link_to book_path(book) do
+              = book.title
+  .new
+    = link_to new_book_path(@book) do
+      .new__btn
+        =icon('fas', 'plus')

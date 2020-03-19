@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
   belongs_to :user
 
-  validates :title, presence: true, unless: :image?
+  validates :title, presence: true
 end

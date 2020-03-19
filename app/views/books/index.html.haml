@@ -3,7 +3,7 @@
   .header
     .top-box
       .top-box__title
-        = link_to "#" do
+        = link_to root_path do
           comicrage
       %form.top-box__form
         %input{type: "text", class: "top-box__form__input", placeholder: "タイトルを入力してください"}
@@ -14,13 +14,13 @@
           カテゴリ
       .bottom-box__icon
         .bottom-box__icon__btn
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             = icon('far', 'user-circle', class: 'icon')
         .bottom-box__icon__user
-          test
+          = current_user.nikename
   .contents
     .contents-name
-      %h1.contents-name__box
+      .contents-name__box
         コミック一覧
     .lists
       .lists__box

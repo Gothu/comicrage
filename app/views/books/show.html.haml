@@ -1,7 +1,14 @@
-.book-title
-  = @book.title
-.book-image
-  = @book.image
-.book-author
-.book-comment
-  = simple_format @book.comment
+.wrapper
+  = render partial: "header", locals: { book: @book }
+  .book-title
+    = @book.title
+  .book-image
+    = image_tag @book.image.url, :size =>'400x400' if @book.image.present?
+  .book-comment
+    = simple_format @book.comment
+  .book-edit
+    = link_to "#" do
+      編集
+  .book-delete
+    = link_to "#" do
+      削除

@@ -3,6 +3,7 @@
     = form_for(@book)do |f|
       %h3 登録する
       = f.text_field :title, placeholder: "title"
-      = f.text_field :image, placeholder: "Image Url"
+      -# = f.text_field :image, placeholder: "Image Url"
+      = f.file_field :image
       = f.text_area :comment, placeholder: "comment"
       = f.submit "SEND"

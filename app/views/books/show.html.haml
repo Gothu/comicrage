@@ -7,7 +7,7 @@
   .book-comment
     = simple_format @book.comment
   .book-edit
-    = link_to "#" do
+    = link_to edit_book_path(@book.id) do
       編集
   .book-delete
     = link_to "#" do

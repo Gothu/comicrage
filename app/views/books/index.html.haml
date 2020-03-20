@@ -1,27 +1,10 @@
 
 .wrapper
-  .header
-    .top-box
-      .top-box__title
-        = link_to root_path do
-          comicrage
-      %form.top-box__form
-        %input{type: "text", class: "top-box__form__input", placeholder: "タイトルを入力してください"}
-    .bottom-box
-      .bottom-box__category
-        .bottom-box__category__mark
-          = icon('fas', 'list', class: 'icon')
-          カテゴリ
-      .bottom-box__icon
-        .bottom-box__icon__btn
-          = link_to edit_user_path(current_user) do
-            = icon('far', 'user-circle', class: 'icon')
-        .bottom-box__icon__user
-          = current_user.nikename
+  = render partial: "header", locals: { book: @book }
   .contents
     .contents-name
       .contents-name__box
-        コミック一覧
+        登録タイトル一覧
     .lists
       - @books.each do |book|
         .lists__box

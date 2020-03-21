@@ -3,8 +3,7 @@
   = render partial: "header", locals: { book: @book }
   .contents
     .contents-name
-      .contents-name__box
-        登録タイトル一覧
+      %h1.contents-name__box 登録タイトル一覧
     .lists
       - @books.each do |book|
         .lists__box

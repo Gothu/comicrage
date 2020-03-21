@@ -1,0 +1,92 @@
+.main-box {
+  background-color: whitesmoke;
+  margin: 40px auto 0;
+  width: 70%;
+  padding: 50px 50px;
+  box-shadow: 2px 2px 4px gray;
+  .books {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    .book-image {
+      background-color: #f1f1f1;
+      width: 318px;
+      img {
+        max-width: 100%;
+      }
+      &__miss {
+        background-color: #f1f1f1;
+        width: 68%;
+        height: 350px;
+        color: gray;
+        text-align: center;
+        line-height: 350px;
+        margin: 50px 50px;
+        border: 2px dashed #ddd;
+      }
+    }
+    .book-info {
+      width: 460px;
+      padding-top: 20px;
+      &__title {
+        height: 50px;
+        width: 100%;
+        line-height: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: 2px dashed forestgreen;
+        margin-bottom: 60px;
+        padding-left: 5px;
+        color: #0088cc;
+      }
+      &__tab {
+        width: 100%;
+        border: 1px solid #b9b9b9;
+        th {
+          padding: 20px 10px;
+          width: 30%;
+          border: 1px solid #b9b9b9;
+          background-color: #ebebeb;
+        }
+        td {
+          padding: 20px 10px;
+          width: 70%;
+          border: 1px solid #b9b9b9;
+        }
+      }
+    }
+  }
+  .book-theme {
+    background-color: #ebebeb;
+    padding: 5px 5px;
+    border: 1px solid #b9b9b9;
+    margin-top: 30px;
+  }
+  .book-comment {
+    border: 1px solid #b9b9b9;
+    padding: 10px 7px;
+  }
+  .book-icon {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    &__edit {
+      background-color:green;
+      padding: 15px 20px;
+      border: 2px solid forestgreen;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+    &__delete {
+      background-color: $alert_red;
+      padding: 15px 20px;
+      border: 2px solid $alert_red;
+      border-radius: 10px;
+    }
+    a {
+      color: #ebebeb;
+      text-decoration: none;
+    }
+  }
+}

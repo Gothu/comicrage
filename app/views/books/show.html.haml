@@ -1,14 +1,34 @@
 .wrapper
   = render partial: "header", locals: { book: @book }
-  .book-title
-    = @book.title
-  .book-image
-    = image_tag @book.image.url, :size =>'400x400' if @book.image.present?
-  .book-comment
-    = simple_format @book.comment
-  .book-edit
-    = link_to edit_book_path(@book) do
-      編集
-  .book-delete
-    = link_to book_path(@book), method: :delete do
-      削除
+  .main-box
+    .books
+      .book-image
+        - if @book.image.present?
+          = image_tag @book.image.url
+        - else
+          .book-image__miss No image
+      .book-info
+        .book-info__title
+          = @book.title
+        %table.book-info__tab
+          %tr
+            %th 漫画家名
+            %td 尾田　栄一郎
+          %tr
+            %th カテゴリー
+            %td 
+          %tr
+            %th 通常価格
+            %td ¥ 460
+          %tr
+            %th 冊数
+            %td 95 冊
+    %h2.book-theme 作品内容
+    .book-comment
+      .book-comment__memo
+        = simple_format @book.comment
+    .book-icon
+      = link_to edit_book_path(@book) do
+        .book-icon__edit 編集
+      = link_to book_path(@book), method: :delete do
+        .book-icon__delete 削除

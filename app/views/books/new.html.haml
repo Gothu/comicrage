@@ -30,6 +30,7 @@
                 = f.number_field :stock, class: 'register__stock__volume'
                 冊
             .register__image
+              = f.label :画像
               = f.file_field :image
               %p
                 = f.check_box :remove_image

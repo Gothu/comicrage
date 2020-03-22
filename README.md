@@ -37,9 +37,12 @@ Things you may want to cover:
 ## booksテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text||
+|title|string||
 |comment|text||
 |image|text||
+|writer|string||
+|price|integer||
+|stock|integer||
 |user-id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user

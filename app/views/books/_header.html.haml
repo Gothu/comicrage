@@ -3,8 +3,10 @@
     .top-box__title
       = link_to root_path do
         comicrage
-    %form.top-box__form
-      %input{type: "text", class: "top-box__form__input", placeholder: "タイトルを入力してください"}
+    = form_with(url: books_searches_path, local: true, method: :get) do |f|
+      .top-box__form
+        = f.text_field :title_key, class: 'top-box__form__input', placeholder: "タイトルを入力してください"
+        = f.submit "検索", class: "top-box__form__search"
   .bottom-box
     .bottom-box__category
       .bottom-box__category__mark

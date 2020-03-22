@@ -1,0 +1,35 @@
+
+.wrapper
+  .header
+    .top-box
+      .top-box__title
+        = link_to root_path do
+          comicrage
+      = form_with(url: books_searches_path, local: true, method: :get) do |f|
+        .top-box__form
+          = f.text_field :title_key, class: 'top-box__form__input', placeholder: "タイトルを入力してください"
+          = f.submit "検索", class: "top-box__form__search"
+    .bottom-box
+      .bottom-box__category
+        .bottom-box__category__mark
+          = icon('fas', 'list', class: 'icon')
+          カテゴリ
+      .bottom-box__icon
+        .bottom-box__icon__btn
+          = link_to edit_user_path(current_user) do
+            = icon('far', 'user-circle', class: 'icon')
+        .bottom-box__icon__user
+          = current_user.nikename
+  .contents
+    .contents-name
+      %h1.contents-name__box 検索結果一覧
+    .lists
+      - @books.each do |book|
+        .lists__box
+          .lists__box__title
+            = link_to book_path(book.id) do
+              = book.title
+  .new
+    = link_to new_book_path(@book) do
+      .new__btn
+        =icon('fas', 'plus')

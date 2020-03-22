@@ -13,16 +13,21 @@
         %table.book-info__tab
           %tr
             %th 漫画家名
-            %td 尾田　栄一郎
+            %td
+              = @book.writer
           %tr
             %th カテゴリー
             %td 
           %tr
             %th 通常価格
-            %td ¥ 460
+            %td
+              ¥
+              = @book.price
           %tr
             %th 冊数
-            %td 95 冊
+            %td 
+              = @book.stock
+              冊
     %h2.book-theme 作品内容
     .book-comment
       .book-comment__memo

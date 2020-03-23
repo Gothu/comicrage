@@ -4,11 +4,11 @@
     .container
       = form_for(@book)do |f|
         .container__info
-          .register__image
+          .preview__image
             - if @book.image.present?
               = image_tag @book.image.url
             - else
-              .register__image__miss No image
+              .preview__image__miss No image
           .register
             %h3 登録
             .register__title

@@ -1,18 +1,15 @@
 .account-page {
-  padding: 50px;
+  padding: 50px 200px;
   background-color: whitesmoke;
   min-height: 100vh;
   .account-page__inner {
-    width: 980px;
     margin: 50px auto 0;
     padding: 60px;
     background-color: #fff;
     box-shadow: 2px 2px 4px gray;
-    // border: 1px solid #ddd;
     border-radius: 5px;
 
     .account-page__inner--left, .account-page__inner--right {
-      // float: left;
       width: 60%;
       margin: 0 auto;
     }

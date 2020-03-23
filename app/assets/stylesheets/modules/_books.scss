@@ -9,14 +9,15 @@
     height: 100px;
     width: 100%;
     box-shadow: 2px 2px 4px gray;
-    padding: 0 150px;
+    padding: 0 150px 0 50px;
     display: flex;
     .left-box {
-      width: 35%;
+      width: inherit;
       &__title {
         margin-top: 5px;
         font-size: 60px;
         font-family: fantasy;
+        text-align: center;
       }
       a {
         text-decoration: none;
@@ -24,7 +25,7 @@
       }
     }
     .right-box {
-      width: 65%;
+      width: inherit;
       &__form {
         margin-top: 18px;
         position: relative;

@@ -6,9 +6,9 @@
         .container__info
           .preview__image
             - if @book.image.present?
-              = image_tag @book.image.url
+              = image_tag @book, id: :img_prev
             - else
-              .preview__image__miss No image
+              = image_tag "sample.jpg", id: :img_prev
           .register
             %h3 登録
             .register__title
@@ -31,10 +31,11 @@
                 冊
             .register__image
               = f.label :画像
-              = f.file_field :image
               %p
-                = f.check_box :remove_image
-                画像を削除する
+                = f.file_field :image, id: :book_img
+                %p
+                  = f.check_box :remove_image
+                  = '画像を削除する'
         .container__memo
           .register__comment
             = f.label :作品内容

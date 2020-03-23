@@ -10,10 +10,10 @@
     width: 100%;
     align-items: center;
     .book-image {
-      background-color: #f1f1f1;
       width: 318px;
       img {
         max-width: 100%;
+        border: 1px solid #b9b9b9;
       }
       &__miss {
         background-color: #f1f1f1;

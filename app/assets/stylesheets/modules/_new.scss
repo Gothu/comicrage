@@ -9,9 +9,9 @@
       display: flex;
       justify-content: space-around;
       .preview__image {
-        background-color: #f1f1f1;
         width: 318px;
         img {
+          border: 1px solid #b9b9b9;
           height: 500px;
           max-width: 100%;
           object-fit: cover;
@@ -67,7 +67,7 @@
           }
         }
         &__image {
-          margin-top: 10px;
+          margin-top: 20px;
           color: #414141;
         }
         h3 {

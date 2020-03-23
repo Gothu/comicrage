@@ -1,4 +1,5 @@
 .contents-row{
+  background-color: white;
   width: 70%;
   margin: 40px auto 0;
   padding: 50px 50px;
@@ -7,9 +8,27 @@
     &__info {
       display: flex;
       justify-content: space-around;
+      .preview__image {
+        background-color: #f1f1f1;
+        width: 318px;
+        img {
+          height: 500px;
+          max-width: 100%;
+          object-fit: cover;
+        }
+        &__miss {
+          background-color: #f1f1f1;
+          width: 68%;
+          height: 350px;
+          color: gray;
+          text-align: center;
+          line-height: 350px;
+          margin: 50px 50px;
+          border: 2px dashed #ddd;
+        }
+      }
       .register {
         width: 45%;
-        height: 400px;
         margin-top: 30px;
         &__title {
           margin-top: 25px;
@@ -63,23 +82,6 @@
         }
         p {
           color: #414141;
-        }
-      }
-      .register__image {
-        background-color: #f1f1f1;
-        width: 318px;
-        img {
-          max-width: 100%;
-        }
-        &__miss {
-          background-color: #f1f1f1;
-          width: 68%;
-          height: 350px;
-          color: gray;
-          text-align: center;
-          line-height: 350px;
-          margin: 50px 50px;
-          border: 2px dashed #ddd;
         }
       }
     }

@@ -3,12 +3,19 @@
   = render partial: "header", locals: { book: @book }
   .contents
     .contents-name
-      %h1.contents-name__box 登録タイトル一覧
+      .contents-name__box 登録タイトル一覧
+      .contents-name__stock
+        = "総冊数：#{current_user.books.sum(:stock)} 冊"
     .lists
       - @books.each do |book|
         .lists__box
-          .lists__box__title
-            = link_to book_path(book.id) do
+          = link_to book_path(book.id) do
+            .lists__box__image
+              - if book.image.present?
+                = image_tag book.image.url
+              - else
+                .lists__box__image__miss No image
+            .lists__box__title
               = book.title
   .new
     = link_to new_book_path(@book) do

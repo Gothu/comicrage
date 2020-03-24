@@ -8,7 +8,7 @@
             - if @book.image.present?
               = image_tag @book, id: :img_prev
             - else
-              = image_tag "sample.jpg", id: :img_prev
+              = image_tag 'no_image.png', id: :img_prev
           .register
             %h3 登録
             .register__title

@@ -6,7 +6,7 @@
         - if @book.image.present?
           = image_tag @book.image.url
         - else
-          .book-image__miss No image
+          = image_tag 'no_image.png'
       .book-info
         .book-info__title
           = @book.title

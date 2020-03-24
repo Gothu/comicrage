@@ -4,6 +4,8 @@
   width: 70%;
   padding: 50px 50px;
   box-shadow: 2px 2px 4px gray;
+  border-radius: 15px;
+  border: 1px solid #b9b9b9;
   .books {
     display: flex;
     justify-content: space-around;
@@ -14,16 +16,6 @@
       img {
         max-width: 100%;
         border: 1px solid #b9b9b9;
-      }
-      &__miss {
-        background-color: #f1f1f1;
-        width: 68%;
-        height: 350px;
-        color: gray;
-        text-align: center;
-        line-height: 350px;
-        margin: 50px 50px;
-        border: 2px dashed #ddd;
       }
     }
     .book-info {

@@ -35,6 +35,6 @@
     .book-icon
       = link_to edit_book_path(@book) do
         .book-icon__edit 編集
-      = link_to book_path(@book), method: :delete do
+      = link_to book_path(@book), method: :delete, data: {confirm: '本当に削除しますか？'} do
         .book-icon__delete 削除
   = render partial: "footer", locals: { book: @book }

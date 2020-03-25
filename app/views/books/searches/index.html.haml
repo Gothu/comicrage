@@ -1,35 +1,14 @@
 
 .wrapper
-  .header
-    .left-box
-      .left-box__title
-        = link_to root_path do
-          comicrage
-    .right-box
-      = form_with(url: books_searches_path, local: true, method: :get) do |f|
-        .right-box__form
-          = f.text_field :title_key, class: 'right-box__form__input', placeholder: "タイトルを入力してください"
-          = button_tag type: 'submit', class: "right-box__form__search" do
-            = icon('fas', 'search')
-      .right-box__info
-        .right-box__info__category
-          .right-box__info__category__mark
-            = icon('fas', 'list', class: 'icon')
-            カテゴリ
-        .right-box__info__icon
-          .right-box__info__icon__btn
-            = link_to edit_user_path(current_user) do
-              = icon('far', 'user-circle')
-          .right-box__info__icon__user
-            = current_user.nikename
+  = render partial: "/books/header", locals: { book: @book }
   .swiper-container
     .swiper-wrapper
       .swiper-slide
-        = image_tag "sample.jpg"
+        = image_tag "mercari.png"
       .swiper-slide
         = image_tag "sample1.jpg"
       .swiper-slide
-        = image_tag "sample2.jpg"
+        = image_tag "line.png"
     .swiper-pagination.swiper-pagination-white
     .swiper-button-prev.swiper-button-white
     .swiper-button-next.swiper-button-white
@@ -74,3 +53,4 @@
     = link_to new_book_path(@book) do
       .new__btn
         =icon('fas', 'plus')
+  = render partial: "/books/footer", locals: { book: @book }

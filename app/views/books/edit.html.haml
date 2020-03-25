@@ -43,3 +43,4 @@
               = f.text_area :comment, placeholder: "内容を入力してください", class: 'register__comment__message'
         .container__submit
           = f.submit "更新", class: 'container__submit__btn'
+  = render partial: "footer", locals: { book: @book }

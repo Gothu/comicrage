@@ -6,7 +6,6 @@
   background-image: url("flower-back1354.jpg");
   background-size: cover;
   background-position: center;
-  padding-bottom: 50px;
   .header {
     background-color: white;
     height: 100px;
@@ -134,7 +133,6 @@
         margin: 0 6px 10px 5px;
         box-shadow: 2px 2px 4px gray;
         border: 1px solid #b9b9b9;
-        overflow: scroll;
         &__image {
           max-height: 250px;
           min-height: 250px;
@@ -150,6 +148,7 @@
         &__title {
           width: 100%;
           padding: 1px 4px;
+          overflow: hidden;
         }
         a {
           text-decoration: none;
@@ -182,6 +181,42 @@
     }
     a {
       color: white;
+    }
+  }
+  .footer {
+    background-color: #212121;
+    width: 100%;
+    padding-top: 10px;
+    &__image {
+      background-image: url(hondana.jpg);
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #ebebeb;
+      margin-bottom: 15px;
+    }
+    &__content {
+      height: 100px;
+      text-align: center;
+      font-size: 20px;
+      color: #bcbcbc;
+      font-weight: bold;
+      span {
+        border-bottom: 1px solid #bcbcbc;
+      }
+      &--icon {
+        font-size: 30px;
+        letter-spacing: 0.1em;
+      }
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
     }
   }
 }

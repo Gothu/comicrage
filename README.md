@@ -44,5 +44,16 @@ Things you may want to cover:
 |price|integer||
 |stock|integer||
 |user-id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- belongs_to :category
+
+## categorysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|company|string||
+|ancestry|||
+### Association
+- has_many :books
+- has_ancestry

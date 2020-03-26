@@ -3,6 +3,9 @@
     .left-box__title
       = link_to root_path do
         comicrage
+    .left-box__category
+      = icon('fas', 'list', class: 'icon')
+      カテゴリ
   .right-box
     = form_with(url: books_searches_path, local: true, method: :get) do |f|
       .right-box__form
@@ -10,10 +13,6 @@
         = button_tag type: 'submit', class: "right-box__form__search" do
           = icon('fas', 'search')
     .right-box__info
-      .right-box__info__category
-        .right-box__info__category__mark
-          = icon('fas', 'list', class: 'icon')
-          カテゴリ
       .right-box__info__icon
         .right-box__info__icon__btn
           = link_to edit_user_path(current_user) do

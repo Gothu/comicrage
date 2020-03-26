@@ -8,7 +8,7 @@
   background-position: center;
   .header {
     background-color: white;
-    height: 100px;
+    height: 108px;
     width: 100%;
     box-shadow: 2px 2px 4px gray;
     padding: 0 150px 0 50px;
@@ -16,14 +16,20 @@
     .left-box {
       width: inherit;
       &__title {
-        margin-top: 5px;
-        font-size: 60px;
+        font-size: 50px;
         font-family: fantasy;
         text-align: center;
       }
       a {
         text-decoration: none;
         color: forestgreen;
+      }
+      &__category {
+        text-align: center;
+        font-weight: bold;
+        .icon {
+          color: red;
+        }
       }
     }
     .right-box {
@@ -55,22 +61,11 @@
           }
         }
       }
-      .right-box__info {
-        display: flex;
-        justify-content: space-between;
-        &__category {
-          font-weight: bold;
-          &__mark {
-            margin-top: 16px;
-            .icon {
-              color: red;
-            }
-          }
-        }
-        &__icon {
+        .right-box__info__icon {
           width: 150px;
           display: flex;
           margin-top: 3px;
+          float: right;
           &__btn {
             width: 50px;
             font-size: 30px;
@@ -88,7 +83,7 @@
             font-weight: bold;
             padding-top: 3px;
             font-family: 'Comic Sans MS';
-          }
+          
         }
       }
     }
@@ -161,6 +156,20 @@
               opacity: 0.6;
             }
           }
+        }
+      }
+    }
+    .pagination {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      a {
+        text-decoration: none;
+        color: #212121;
+        &:hover {
+          color: #0088cc;
         }
       }
     }

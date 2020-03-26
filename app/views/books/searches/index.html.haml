@@ -49,6 +49,7 @@
                 = image_tag 'no_image.png'
             .lists__box__title
               = book.title
+    = paginate(@books)
   .new
     = link_to new_book_path(@book) do
       .new__btn

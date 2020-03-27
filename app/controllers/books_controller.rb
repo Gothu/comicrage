@@ -5,15 +5,22 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @category_parent_array = ["選択してください"]
+    Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.company 
+    end
   end
-    
+
+  def get_category_children
+    @category_children = Category.find_by(company: "#{params[:parent_id]}", ancestry: nil).children
+  end
+
   def create
     @book = Book.new(book_params)
     if @book.save
       redirect_to root_path, notice: '登録が完了されました'
     else
-      flash.now[:alert] = 'タイトルを入力してください。'
-      render :new
+      redirect_to new_book_path, notice: 'タイトルとカテゴリを入力してください。'
     end
   end
 
@@ -43,6 +50,6 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:title, :comment, :image, :writer, :price, :stock, :image_cache, :remove_image).merge(user_id: current_user.id)
+    params.require(:book).permit(:title, :comment, :image, :writer, :price, :stock, :image_cache, :remove_image, :category_id).merge(user_id: current_user.id)
   end
 end

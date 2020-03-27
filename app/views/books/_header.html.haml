@@ -4,8 +4,9 @@
       = link_to root_path do
         comicrage
     .left-box__category
-      = icon('fas', 'list', class: 'icon')
-      カテゴリ
+      =link_to categories_path do
+        = icon('fas', 'list', class: 'icon')
+        カテゴリ
   .right-box
     = form_with(url: books_searches_path, local: true, method: :get) do |f|
       .right-box__form

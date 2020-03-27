@@ -19,6 +19,14 @@
               = f.label :漫画家名
               %p
                 = f.text_field :writer, placeholder: "作家名を入力してください", class: 'register__writer__pen'
+            .listing-form-box
+              .listing-product-detail__category
+                = f.label 'カテゴリー', class: 'listing-default__label'
+                %span.listing-default--require 必須
+                .listing-select-wrapper
+                  .listing-select-wrapper__box
+                    = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name: "book[category_id]"}
+                    %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
             .register__price
               = f.label :通常価格
               %p

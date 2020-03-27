@@ -1,0 +1,51 @@
+.wrapper
+  = render partial: "/books/header", locals: { book: @book }
+  .swiper-container
+    .swiper-wrapper
+      .swiper-slide
+        = image_tag "mercari.png"
+      .swiper-slide
+        = image_tag "sample1.jpg"
+      .swiper-slide
+        = image_tag "line.png"
+    .swiper-pagination.swiper-pagination-white
+    .swiper-button-prev.swiper-button-white
+    .swiper-button-next.swiper-button-white
+  :javascript
+      var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        prevEl: '.swiper-button-prev', //左側にあるこれ「＜」
+        nextEl: '.swiper-button-next', //右側にあるこれ「＞」
+      },
+      effect: 'slide',
+      effect: 'fade',
+      effect: 'coverflow',
+      loop: true, //画像のループの有無
+      speed: 1000, //スライドするスピード
+      pagination: { //ページネーションの種類
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true, //クリック判定の有無
+      },
+      autoplay: { //自動スライド
+        delay: 2000, //３秒ごとに
+        disableOnInteraction: false
+      },
+    });
+  .contents
+    .contents-name
+      .contents-name__box 登録雑誌一覧
+      .contents-name__stock
+        = "総冊数：#{current_user.books.sum(:stock)} 冊"
+    .lists
+      - @books.each do |book|
+        .lists__box
+          = link_to book_path(book.id) do
+            .lists__box__image
+              - if book.image.present?
+                = image_tag book.image.url
+              - else
+                = image_tag 'no_image.png'
+            .lists__box__title
+              = book.title
+  = render partial: "/books/footer", locals: { book: @book }

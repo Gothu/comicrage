@@ -2,11 +2,12 @@
   .left-box
     .left-box__title
       = link_to root_path do
-        comicrage
+        = image_tag "Clothing.png", size: "300x70"
     .left-box__category
-      =link_to categories_path do
-        = icon('fas', 'list', class: 'icon')
-        カテゴリ
+      = link_to categories_path do
+        .left-box__category__box
+          = icon('fas', 'list', class: 'icon')
+          = "出版社で探す"
   .right-box
     = form_with(url: books_searches_path, local: true, method: :get) do |f|
       .right-box__form

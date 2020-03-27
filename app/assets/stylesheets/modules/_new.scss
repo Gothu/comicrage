@@ -50,6 +50,22 @@
             padding-left: 3px;
           }
         }
+        .listing-form-box {
+          margin-top: 10px;
+          .listing-default--require {
+            font-size: 18px;
+            color: red;
+            font-weight: bold;
+          }
+          .listing-select-wrapper__box--select {
+            height: 30px;
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            outline: none;
+            background-color: white;
+          }
+        }
         &__price {
           margin-top: 10px;
           &__money {

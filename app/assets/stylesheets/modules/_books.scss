@@ -16,9 +16,9 @@
     .left-box {
       width: inherit;
       &__title {
-        font-size: 50px;
-        font-family: fantasy;
+        height: 75px;
         text-align: center;
+        margin-top: 5px;
       }
       a {
         text-decoration: none;
@@ -27,8 +27,11 @@
       &__category {
         text-align: center;
         font-weight: bold;
-        .icon {
-          color: red;
+        &__box {
+          color: #212121;
+          .icon {
+            color: red;
+          }
         }
       }
     }
@@ -188,6 +191,9 @@
       font-size: 90px;
       border-radius: 100px;
       background-color: red;
+      &:hover {
+        background-color: rgb(0, 0, 255);
+      }
     }
     a {
       color: white;

@@ -1,37 +1,6 @@
 .wrapper
   = render partial: "/books/header", locals: { book: @book }
-  .swiper-container
-    .swiper-wrapper
-      .swiper-slide
-        = image_tag "mercari.png"
-      .swiper-slide
-        = image_tag "sample1.jpg"
-      .swiper-slide
-        = image_tag "line.png"
-    .swiper-pagination.swiper-pagination-white
-    .swiper-button-prev.swiper-button-white
-    .swiper-button-next.swiper-button-white
-  :javascript
-      var swiper = new Swiper('.swiper-container', {
-      navigation: {
-        prevEl: '.swiper-button-prev', //左側にあるこれ「＜」
-        nextEl: '.swiper-button-next', //右側にあるこれ「＞」
-      },
-      effect: 'slide',
-      effect: 'fade',
-      effect: 'coverflow',
-      loop: true, //画像のループの有無
-      speed: 1000, //スライドするスピード
-      pagination: { //ページネーションの種類
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true, //クリック判定の有無
-      },
-      autoplay: { //自動スライド
-        delay: 2000, //３秒ごとに
-        disableOnInteraction: false
-      },
-    });
+  = render partial: "/books/swiper", locals: { book: @book }
   .contents
     .contents-name
       .contents-name__box 出版社一覧
@@ -46,8 +15,5 @@
             - parent.children.each do |child|
               = link_to category_path(child.id) do
                 = child.company
-  .new
-    = link_to new_book_path(@book) do
-      .new__btn
-        =icon('fas', 'plus')
+  = render partial: "/books/new", locals: { book: @book }
   = render partial: "/books/footer", locals: { book: @book }

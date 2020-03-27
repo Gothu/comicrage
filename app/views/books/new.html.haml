@@ -26,7 +26,6 @@
                 .listing-select-wrapper
                   .listing-select-wrapper__box
                     = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name: "book[category_id]"}
-                    %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
             .register__price
               = f.label :通常価格
               %p
@@ -40,7 +39,7 @@
             .register__image
               = f.label :画像
               %p
-                = f.file_field :image, id: :book_img
+                = f.file_field :image, id: :book_img, class: 'register__image__file'
                 %p
                   = f.check_box :remove_image
                   = '画像を削除する'

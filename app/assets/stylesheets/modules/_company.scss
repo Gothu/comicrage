@@ -1,8 +1,22 @@
 .company {
   background-color: white;
   margin: 60px;
-  padding: 30px;
   box-shadow: 2px 2px 4px gray;
   border-radius: 15px;
   border: 1px solid #b9b9b9;
+  &__box {
+    margin: 90px;
+    list-style: none;
+    ul {
+      padding-bottom: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    li {
+      word-break: keep-all;
+      a {
+        padding-left: 15px;
+      }
+    }
+  }
 }

@@ -21,27 +21,17 @@
   }
 
   .account-page__header {
+    text-align: center;
     h2 {
       margin-bottom: 10px;
       letter-spacing: 3px;
       font-size: 50px;
-      font-weight: 200;
-      font-family: fantasy;
-      color: forestgreen;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 60px;
-        margin-top: 5px;
-        border-bottom: 2px dashed #0088cc;
-      }
     }
 
     h5 {
       margin-bottom: 20px;
-      font-size: 16px;
-      font-weight: 200;
+      font-size: 20px;
+      font-weight: bold;
     }
 
     

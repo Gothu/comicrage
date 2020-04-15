@@ -1,3 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+@mixin form($width: 100%) {
+  height: 40px;
+  width: $width;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding-left: 3px;
+}
+
+@mixin ThemeNeme() {
+  font-size: 18px;
+  color: #414141;
+  font-weight: bold;
+}
+
+@mixin require() {
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+}
+
 .contents-row{
   background-color: white;
   width: 70%;
@@ -11,22 +35,14 @@
       display: flex;
       justify-content: space-around;
       .preview__image {
-        width: 318px;
+        width: 40%;
+        margin-top: 20px;
+        max-height: 550px;
         img {
           border: 1px solid #b9b9b9;
-          height: 500px;
-          max-width: 100%;
+          max-height: 550px;
+          width: 100%;
           object-fit: cover;
-        }
-        &__miss {
-          background-color: #f1f1f1;
-          width: 68%;
-          height: 350px;
-          color: gray;
-          text-align: center;
-          line-height: 350px;
-          margin: 50px 50px;
-          border: 2px dashed #ddd;
         }
       }
       .register {
@@ -35,32 +51,34 @@
         &__title {
           margin-top: 25px;
           &__name {
-            width: 100%;
-            border-radius: 5px;
-            margin-top: 5px;
-            padding-left: 3px;
+            @include form();
+          }
+          &--box {
+            display: flex;
+            span.ThemeNeme__title {
+              @include require();
+              margin-left: 20px;
+            }
           }
         }
         &__writer {
           margin-top: 10px;
           &__pen {
-            width: 100%;
-            border-radius: 5px;
-            margin-top: 5px;
-            padding-left: 3px;
+            @include form();
           }
         }
         .listing-form-box {
           margin-top: 10px;
-          .listing-default--require {
+          .listing-default__label {
             font-size: 18px;
-            color: red;
+            color: #414141;
             font-weight: bold;
           }
+          .listing-default--require {
+            @include require();
+          }
           .listing-select-wrapper__box--select {
-            height: 30px;
-            width: 100%;
-            border-radius: 20px;
+            @include form();
             margin-bottom: 10px;
             outline: none;
             background-color: white;
@@ -69,19 +87,13 @@
         &__price {
           margin-top: 10px;
           &__money {
-            width: 20%;
-            border-radius: 5px;
-            margin-top: 5px;
-            padding-left: 3px;
+            @include form($width: 30%);
           }
         }
         &__stock {
           margin-top: 10px;
           &__volume {
-            width: 20%;
-            border-radius: 5px;
-            margin-top: 5px;
-            padding-left: 3px;
+            @include form($width: 30%);
           }
         }
         &__image {
@@ -94,10 +106,8 @@
           color: #0088cc;
           border-bottom: 2px dashed forestgreen;
         }
-        label {
-          font-size: 18px;
-          color: #414141;
-          font-weight: bold;
+        .ThemeNeme {
+          @include ThemeNeme();
         }
         p {
           color: #414141;
@@ -124,18 +134,18 @@
     .container__submit {
       position: relative;
       height: 65px;
-        &__btn {
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          background-color:green;
-          padding: 8px 20px;
-          border: 2px solid forestgreen;
-          border-radius: 10px;
-          color: whitesmoke;
-          font-size: 20px;
-          outline: none;
-          cursor: pointer;
+      &__btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color:green;
+        padding: 8px 20px;
+        border: 2px solid forestgreen;
+        border-radius: 10px;
+        color: whitesmoke;
+        font-size: 20px;
+        outline: none;
+        cursor: pointer;
       }
     }
   }

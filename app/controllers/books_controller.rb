@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :set_book, only: [:show, :destroy, :edit, :update]
+
   def index
     @books = current_user.books.includes(:user).order("created_at DESC").page(params[:page]).per(35)
   end
@@ -25,15 +27,12 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
   end
 
   def edit
-    @book = Book.find(params[:id])
   end
 
   def update
-    @book = Book.find(params[:id])
     if @book.update(book_params)
       redirect_to book_path, notice: '編集が完了されました'
     else
@@ -43,12 +42,16 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book = Book.find(params[:id])
     book.destroy
     redirect_to root_path, notice: '削除しました'
   end
 
   private
+
+  def set_book
+    @book = Book.find(params[:id])
+  end
+
   def book_params
     params.require(:book).permit(:title, :comment, :image, :writer, :price, :stock, :image_cache, :remove_image, :category_id).merge(user_id: current_user.id)
   end

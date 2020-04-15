@@ -1,13 +1,51 @@
-.notification {
-  .notice {
-    background-color: $light_green;
-    color: $white;
-    text-align: center;
-  }
+@mixin flash($background-color: #45a748, $border: 1px solid $light_green) {
+  border-radius: 3px;
+  border: $border;
+  padding: 10px 15px 10px 35px;
+  background-color: $background-color;
+  color: $white;
+  text-align: center;
+}
 
+@mixin icon($left: 10px) {
+  position: absolute;
+  bottom: 15px;
+  left: $left;
+  color: #fff;
+}
+
+.notification {
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  z-index: 1000;
+  // アニメーション設定
+  animation-name: fade;
+  animation-duration: 1s; //アニメーション時間
+  animation-timing-function: ease-out; //アニメーションさせるイージング
+  animation-delay: 0; //アニメーション開始させる時間
+  animation-iteration-count: 1; //繰り返し回数
+  // animation-direction: alternate; //往復処理をするかどうか
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      transform: translate3d(30px, 0, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .notice {
+    @include flash();
+  }
+  i.fas.fa-check {
+    @include icon();
+  }
   .alert {
-    background-color: $alert_red;
-    color: $white;
-    text-align: center;
+    @include flash($background-color: #c55752, $border: 1px solid $alert_red);
+  }
+  i.fas.fa-exclamation {
+    @include icon($left: 15px);
   }
 }

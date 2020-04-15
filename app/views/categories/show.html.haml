@@ -3,7 +3,7 @@
   = render partial: "/books/swiper", locals: { book: @book }
   .contents
     .contents-name
-      .contents-name__box 登録雑誌一覧
+      .contents-name__box= "#{@category.company}一覧"
       .contents-name__stock
         = "総冊数：#{@books.sum(:stock)} 冊"
     .lists

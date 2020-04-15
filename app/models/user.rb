@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :books
 
-  validates :nikename, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true
 
 end

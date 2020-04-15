@@ -16,9 +16,9 @@
             %td
               = @book.writer
           %tr
-            %th カテゴリー
+            %th 雑誌名
             %td 
-              = @book.category.company
+              = "#{@book.category.parent.company} / #{@book.category.company}"
           %tr
             %th 通常価格
             %td

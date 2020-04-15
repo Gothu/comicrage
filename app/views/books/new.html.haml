@@ -4,7 +4,7 @@
     .container
       = form_for(@book)do |f|
         .container__info
-          .preview__image
+          .preview__image(onclick="$('input[id=book_img]').click();")
             - if @book.image.present?
               = image_tag @book, id: :img_prev
             - else
@@ -12,12 +12,14 @@
           .register
             %h3 登録
             .register__title
-              = f.label :タイトル
-              %p
+              = f.label :title do
+                .register__title--box
+                  .ThemeNeme タイトル
+                  %span.ThemeNeme__title 必須
                 = f.text_field :title, placeholder: "タイトルを入力してください", class: 'register__title__name'
             .register__writer
-              = f.label :漫画家名
-              %p
+              = f.label :writer do
+                .ThemeNeme 漫画家名
                 = f.text_field :writer, placeholder: "作家名を入力してください", class: 'register__writer__pen'
             .listing-form-box
               .listing-product-detail__category
@@ -27,22 +29,22 @@
                   .listing-select-wrapper__box
                     = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name: "book[category_id]"}
             .register__price
-              = f.label :通常価格
-              %p
+              = f.label :price do
+                .ThemeNeme 通常価格
                 = f.number_field :price, class: 'register__price__money'
                 円
             .register__stock
-              = f.label :冊数
-              %p
+              = f.label :stock do
+                .ThemeNeme 冊数
                 = f.number_field :stock, class: 'register__stock__volume'
                 冊
             .register__image
-              = f.label :画像
-              %p
-                = f.file_field :image, id: :book_img, class: 'register__image__file'
-                %p
-                  = f.check_box :remove_image
-                  = '画像を削除する'
+              = f.label :image do
+                .ThemeNeme 画像
+                = f.file_field :image, id: :book_img, class: 'register__image__file', style: "display: none"
+            = f.label :remove_image do
+              = f.check_box :remove_image
+              = "画像を削除する"
         .container__memo
           .register__comment
             = f.label :作品内容

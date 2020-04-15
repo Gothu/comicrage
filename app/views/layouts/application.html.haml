@@ -13,3 +13,8 @@
   %body
     = render 'layouts/notifications'
     = yield
+
+    :javascript
+      $(function(){
+        setTimeout("$('.notification').fadeOut(1000)", 5000);
+      });

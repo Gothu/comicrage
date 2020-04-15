@@ -1,3 +1,8 @@
 .notification
   - flash.each do |key, value|
-    = content_tag :div, value, class: key
+    - if notice
+      = content_tag :div, value, class: key
+      %i.fas.fa-check
+    - elsif alert
+      = content_tag :div, value, class: key
+      %i.fas.fa-exclamation

@@ -22,7 +22,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to root_path, notice: '登録が完了されました'
     else
-      redirect_to new_book_path, notice: 'タイトルとカテゴリを入力してください。'
+      redirect_to new_book_path, notice: 'タイトルとカテゴリを入力してください'
     end
   end
 
@@ -36,13 +36,13 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to book_path, notice: '編集が完了されました'
     else
-      flash.now[:alert] = '編集が失敗しました。'
+      flash.now[:alert] = '編集が失敗しました'
       render :edit
     end
   end
 
   def destroy
-    book.destroy
+    @book.destroy
     redirect_to root_path, notice: '削除しました'
   end
 

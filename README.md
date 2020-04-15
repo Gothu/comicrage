@@ -28,7 +28,7 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nikename|string|null: false|
+|nickname|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
 ### Association

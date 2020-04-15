@@ -1,13 +1,13 @@
 class BooksController < ApplicationController
   def index
-    @books = current_user.books.includes(:user).order("created_at DESC").page(params[:page]).per(50)
+    @books = current_user.books.includes(:user).order("created_at DESC").page(params[:page]).per(35)
   end
 
   def new
     @book = Book.new
     @category_parent_array = ["選択してください"]
     Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.company 
+      @category_parent_array << parent.company 
     end
   end
 

@@ -28,6 +28,22 @@
     box-shadow: 2px 2px 4px gray;
     border-radius: 15px;
     border: 1px solid gray;
+    animation-name: fade3;
+    animation-duration: 1.5s; //アニメーション時間
+    animation-timing-function: ease-out; //アニメーションさせるイージング
+    animation-delay: 0; //アニメーション開始させる時間
+    animation-iteration-count: 1; //繰り返し回数
+    animation-fill-mode: forwards;
+    @keyframes fade3 {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
 
     .account-page__inner--left, .account-page__inner--right {
       width: 60%;

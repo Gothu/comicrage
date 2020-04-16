@@ -11,13 +11,13 @@
             .field-label
               = f.label :email
             .field-input
-              = f.email_field :email, autofocus: true
+              = f.email_field :email, autofocus: true, required: true
             .field
               .field-label
                 = f.label :password
                 %i (英数字8文字以上)
               .field-input
-                = f.password_field :password, autocomplete: "off"
+                = f.password_field :password, autocomplete: "off", required: true, minlength: '8', maxlength: '30'
             .actions
               = f.submit "ログイン", class: 'btn'
               = render "devise/shared/links"

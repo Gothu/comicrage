@@ -38,8 +38,8 @@
               = "画像を削除する"
         .container__memo
           .register__comment
-            = f.label :作品内容
-            %p
+            = f.label :comment do
+              .ThemeNeme 作品内容
               = f.text_area :comment, placeholder: "内容を入力してください", class: 'register__comment__message'
         .container__submit
           = f.submit "更新", class: 'container__submit__btn'

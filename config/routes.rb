@@ -10,5 +10,8 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
     end
+    member do
+      get 'get_category_children', defaults: { format: 'json' }
+    end
   end
 end

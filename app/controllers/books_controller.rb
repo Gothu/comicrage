@@ -30,6 +30,15 @@ class BooksController < ApplicationController
   end
 
   def edit
+    child_category = @book.category
+    @category_parent_array = ["選択してください"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.company
+    end
+
+    @category_children_array = Category.where(ancestry: child_category.ancestry) do
+      @category_children_array << children
+    end
   end
 
   def update

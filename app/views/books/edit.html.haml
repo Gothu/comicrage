@@ -19,6 +19,16 @@
               = f.label :writer do
                 .ThemeNeme 漫画家名
                 = f.text_field :writer, placeholder: "作家名を入力してください", class: 'register__writer__pen'
+            .listing-form-box
+              .listing-product-detail__category
+                = f.label 'カテゴリー', class: 'listing-default__label'
+                %span.listing-default--require 必須
+                .listing-select-wrapper
+                  .listing-select-wrapper__box
+                    = f.select :category_id, @category_parent_array, {selected:@book.category.parent.company}, { class: 'listing-select-wrapper__box--select', id: 'parent_category', name: 'book[category_id]'}
+                .category-wrapper-select#children_wrapper
+                  .category-wrapper-select__box
+                    = f.select :category_id, options_for_select(@category_children_array.map{|b| [b.company, b.id, {data:{category: b.id}}]}, {prompt: "カテゴリ選択", selected: @book.category.id}),{}, {class: 'category-edit', id: 'child_category'}
             .register__price
               = f.label :price do
                 .ThemeNeme 通常価格

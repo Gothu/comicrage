@@ -89,6 +89,12 @@
             background-color: white;
           }
         }
+        .category-edit {
+          @include form();
+          margin-bottom: 10px;
+          outline: none;
+          background-color: white;
+        }
         &__price {
           margin-top: 10px;
           &__money {

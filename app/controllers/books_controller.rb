@@ -36,8 +36,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to book_path, notice: '編集が完了されました'
     else
-      flash.now[:alert] = '編集が失敗しました'
-      render :edit
+      redirect_to edit_book_path, notice: '編集が失敗しました'
     end
   end
 

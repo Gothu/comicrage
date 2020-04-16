@@ -38,6 +38,7 @@
         width: 40%;
         margin-top: 20px;
         max-height: 550px;
+        cursor: pointer;
         img {
           border: 1px solid #b9b9b9;
           max-height: 550px;
@@ -109,14 +110,14 @@
         .ThemeNeme {
           @include ThemeNeme();
         }
-        p {
-          color: #414141;
-        }
       }
     }
     .container__memo {
       padding-top: 40px;
       .register__comment {
+        .ThemeNeme {
+          @include ThemeNeme();
+        }
         &__message {
           margin-top: 10px;
           width: 100%;
@@ -124,10 +125,6 @@
           border-radius: 5px;
           border: 1px solid #b9b9b9;
           padding-left: 5px;
-        }
-        label {
-          font-size: 18px;
-          color: #414141;
         }
       }
     }

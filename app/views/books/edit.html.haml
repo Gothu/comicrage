@@ -13,7 +13,9 @@
             %h3 編集
             .register__title
               = f.label :title do
-                .ThemeNeme タイトル
+                .register__title--box
+                  .ThemeNeme タイトル
+                  %span.ThemeNeme__title 必須
                 = f.text_field :title, placeholder: "タイトルを入力してください", class: 'register__title__name'
             .register__writer
               = f.label :writer do
@@ -21,7 +23,7 @@
                 = f.text_field :writer, placeholder: "作家名を入力してください", class: 'register__writer__pen'
             .listing-form-box
               .listing-product-detail__category
-                = f.label 'カテゴリー', class: 'listing-default__label'
+                = f.label '出版社 / 雑誌', class: 'listing-default__label'
                 %span.listing-default--require 必須
                 .listing-select-wrapper
                   .listing-select-wrapper__box

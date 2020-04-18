@@ -16,10 +16,11 @@
   font-weight: bold;
 }
 
-@mixin require() {
+@mixin require($margin-left: 20px) {
   font-size: 18px;
   color: red;
   font-weight: bold;
+  margin-left: $margin-left;
 }
 
 .contents-row{
@@ -62,7 +63,6 @@
             display: flex;
             span.ThemeNeme__title {
               @include require();
-              margin-left: 20px;
             }
           }
         }

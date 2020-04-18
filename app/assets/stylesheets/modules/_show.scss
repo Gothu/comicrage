@@ -73,10 +73,91 @@
       padding: 15px 20px;
       border: 2px solid $alert_red;
       border-radius: 10px;
+      color: #ebebeb;
+      font-size: 15px;
+      outline: none;
+      cursor: pointer;
     }
     a {
       color: #ebebeb;
       text-decoration: none;
+    }
+    .item-delete-btn {
+    //削除ボタンの非表示
+      width: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    #overlay {
+    //モーダルウィンドウの背景を設定
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    //透過度をつける
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      z-index: 1;
+      #modalWindow {
+      // モーダルウィンドウの画面を設定(高さ・幅は調整)
+        width: 500px;
+        height: 200px;
+        position: absolute;
+      //トップからの場所を指定（topをいじれば高さが調整できる）
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        z-index: 2;
+      //flexboxで子要素のボタンとメッセージボックスの要素を配置する
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .modal-message-box {
+          width: 100%;
+      //下記heightの60pxはボタンの高さで、それを画面の大きさから引いている。
+          height: calc(100% - 55px);
+          text-align: center;
+      //flexboxで文字の配置を決める（縦方向、中央揃え）
+          display: flex;
+          flex-direction: column;
+          // justify-content: space-around;
+          i.fas.fa-exclamation-circle {
+            background-color: crimson;
+            padding: 5px;
+            font-size: 20px;
+            color: white;
+          }
+          &__theme {
+            line-height: 8;
+          }
+        }
+        #modal-close-btn {
+          width: 48%;
+          height: 45px;
+          font-size: 14px;
+          padding-top: 5px;
+          margin: 0 5px;
+          border-radius: 5px;
+          background-color: #80c884;
+          color: white;
+          font-weight: bold;
+        }
+        #delete-comformation-btn {
+          width: 48%;
+          height: 45px;
+          font-size: 14px;
+          padding-top: 5px;
+          margin: 0 5px;
+          border-radius: 5px;
+          background-color: #e47372;
+          color: white;
+          font-weight: bold;
+        }
+      }
     }
   }
 }

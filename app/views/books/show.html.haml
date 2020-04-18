@@ -30,6 +30,28 @@
     .book-icon
       = link_to edit_book_path(@book) do
         .book-icon__edit 編集
-      = link_to book_path(@book), method: :delete, data: {confirm: '本当に削除しますか？'} do
-        .book-icon__delete 削除
+      %button.book-icon__delete#modal-open-btn 削除
+      = link_to "", book_path(@book), method: :delete, id: 'item-delete-btn'
+      #overlay
+        #modalWindow
+          .modal-message-box
+            %i.fas.fa-exclamation-circle
+            .modal-message-box__theme 本当に削除しますか？
+          %button#modal-close-btn キャンセル
+          %button#delete-comformation-btn 削除する
+      :javascript
+        $(document).on('turbolinks:load', function(){
+          let modal_open = document.getElementById("modal-open-btn");
+          modal_open.addEventListener('click',(e)=>{
+            e.preventDefault();
+            $('#overlay').fadeIn("fast");
+            document.getElementById('modal-close-btn').onclick = function () {
+              $('#overlay').fadeOut("fast");
+            };
+            document.getElementById("delete-comformation-btn").onclick = function () {
+              document.getElementById("item-delete-btn").click();
+            };
+          });
+          false
+        });
   = render partial: "footer", locals: { book: @book }

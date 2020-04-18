@@ -36,22 +36,7 @@
         #modalWindow
           .modal-message-box
             %i.fas.fa-exclamation-circle
-            .modal-message-box__theme 本当に削除しますか？
+            .modal-message-box__theme="本当に#{@book.title}を削除しますか？"
           %button#modal-close-btn キャンセル
           %button#delete-comformation-btn 削除する
-      :javascript
-        $(document).on('turbolinks:load', function(){
-          let modal_open = document.getElementById("modal-open-btn");
-          modal_open.addEventListener('click',(e)=>{
-            e.preventDefault();
-            $('#overlay').fadeIn("fast");
-            document.getElementById('modal-close-btn').onclick = function () {
-              $('#overlay').fadeOut("fast");
-            };
-            document.getElementById("delete-comformation-btn").onclick = function () {
-              document.getElementById("item-delete-btn").click();
-            };
-          });
-          false
-        });
   = render partial: "footer", locals: { book: @book }

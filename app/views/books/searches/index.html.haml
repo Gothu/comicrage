@@ -17,5 +17,6 @@
                 = image_tag 'no_image.png'
             .lists__box__title
               = book.title
+    = paginate(@books)
   = render partial: "/books/new", locals: { book: @book }
   = render partial: "/books/footer", locals: { book: @book }

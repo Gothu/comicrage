@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :books
 
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true, length: { maximum: 14 }
 
 end

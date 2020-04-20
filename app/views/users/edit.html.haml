@@ -10,8 +10,9 @@
           .field
             .field-label
               = f.label :nickname
+              %i (14文字以内)
             .field-input
-              = f.text_field :nickname, autofocus: true
+              = f.text_field :nickname, autofocus: true, required: true, maxlength: '14'
           .field
             .field-label
               = f.label :email

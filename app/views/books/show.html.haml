@@ -26,7 +26,7 @@
     %h2.book-theme 作品内容
     .book-comment
       .book-comment__memo
-        = simple_format @book.comment
+        = safe_join(@book.comment.split("\n"),tag(:br))
     .book-icon
       = link_to edit_book_path(@book) do
         .book-icon__edit 編集

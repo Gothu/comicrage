@@ -22,7 +22,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to root_path, notice: '登録が完了されました'
     else
-      redirect_to new_book_path, notice: 'タイトルとカテゴリを入力してください'
+      redirect_to new_book_path, notice: 'タイトルと出版社/雑誌を入力してください'
     end
   end
 

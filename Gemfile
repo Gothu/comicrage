@@ -90,3 +90,5 @@ gem 'jquery-rails'
 gem 'kaminari'
 
 gem 'ancestry'
+
+gem 'fog-aws'

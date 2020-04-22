@@ -6,7 +6,7 @@
         - if @book.image.present?
           = image_tag @book.image.url
         - else
-          = image_tag asset_path('no_image.png')
+          = image_tag 'no_image.png'
       .book-info
         .book-info__title
           = @book.title

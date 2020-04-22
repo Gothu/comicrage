@@ -3,7 +3,7 @@
 }
 
 .wrapper {
-  background-image: image-url('flower-back1354.jpg');
+  background-image: url('flower-back1354.jpg');
   background-size: cover;
   background-position: center;
   .header {
@@ -205,7 +205,7 @@
     width: 100%;
     padding-top: 10px;
     &__image {
-      background-image: image-url('hondana.jpg');
+      background-image: url('hondana.jpg');
       background-size: cover;
       background-position: center;
       height: 250px;

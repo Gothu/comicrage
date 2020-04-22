@@ -46,7 +46,7 @@
                 .ThemeNeme 画像
                 = f.file_field :image, id: :book_img, style: "display: none"
             = f.label :remove_image do
-              = f.check_box :remove_image
+              = f.check_box :remove_image?
               = "画像を削除する"
         .container__memo
           .register__comment
